@@ -1,0 +1,8 @@
+def initialize(self):
+   self.x=np.random.randn(self.dict["particles"])
+   self.y=np.random.randn(self.dict["particles"])
+   self.m=np.ones(self.dict["particles"])*self.m/self.dict["particles"]
+   self.vx=np.zeros(self.dict["particles"])
+   self.vy=np.zeros(self.dict["particles"])
+   self.fx=np.zeros(self.dict["particles"])
+   self.fy=np.zeros(self.dict["particles"])
