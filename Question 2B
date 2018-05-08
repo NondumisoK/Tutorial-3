@@ -1,0 +1,18 @@
+def force(self):
+   self.fx=np.zeros(self.dict["particles"])
+   self.fy=0*self.fx
+   potential=0
+   for i in range(0,self.dict["particles"]):
+      dx=self.x[i]-self.x
+      dy=self.y[i]-self.y
+      rsq=dx**2+dy**2
+      soft=self.dict["soft"]**2 #please note that the code follows under the class created in the previous questions. soft is exp squared
+      rsq[rsq<soft]=soft
+      rsq=rsq+self.dict["soft"]**2
+      r=np.sqr(rsq)
+      r3=1.0/(r*rsq)
+      self.fx[i]=-np.sum(self.m*dx*r3)*self.dict["G"]
+      self.fy[i]=-np.sum(self.m*dy*r3)*self.dict["G"]
+      potential+=pE(self)
+ 
+      
