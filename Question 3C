@@ -1,0 +1,10 @@
+def updatedict(self,dt=0.1):
+   self.dict["dt"]=dt
+   self.x+=self.vx*dt
+   self.y+=self.vy*dt
+   potent=self.pE()
+   self.force()
+   self.vx+=self.fx*dt
+   self.vy+=self.fy*dt
+   kin=0.5*np.sum(self.m*(self.vx**2+self.vy**2))
+   return pot+kin
