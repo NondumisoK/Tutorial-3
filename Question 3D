@@ -1,0 +1,8 @@
+if __name__==__"main"__:
+   plt.ion()
+   n=1500
+   oversamp=5
+   part=nBodyproblem(m=1.0/n,npart=n,dt=0.1,oversamp)
+   plt.plot(part.x,part.y,"*")
+   
+   #to be continued
