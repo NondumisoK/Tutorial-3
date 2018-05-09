@@ -4,5 +4,17 @@ if __name__==__"main"__:
    oversamp=5
    part=nBodyproblem(m=1.0/n,npart=n,dt=0.1,oversamp)
    plt.plot(part.x,part.y,"*")
+   plt.show()
    
-   #to be continued
+   def animate_points(crud):
+      global part,line,oversamp
+      for ii in range(oversamp):
+         energy=part.updatedict()
+      print energy
+      line.set_data(part,.x,part.y)
+      
+   animation=animation.FuncAnimation(fig,animate_points,np.arange(30),interval=25,blit=False)
+   plt.show()
+      
+   
+   
